@@ -1,7 +1,8 @@
 let orbs = []; let num = 10;
 
-function setup() {
+async function setup() {
     createCanvas(windowWidth, windowHeight);
+    // font = await loadFont()
 
     for (let i=0; i<num; i++) {
         let x = random(width);
