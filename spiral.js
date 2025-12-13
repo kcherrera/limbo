@@ -1,7 +1,6 @@
 import * as THREE from "three";
 
 import { HDRLoader } from 'three/addons/loaders/HDRLoader.js';
-import { AsciiEffect } from 'three/addons/effects/AsciiEffect.js';
 
 
 // timer
@@ -21,13 +20,6 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 // renderer.setAnimationLoop(render);
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
 document.body.appendChild(renderer.domElement);
-
-// const effect = new AsciiEffect(renderer, ' .:-+*=%@#', { invert: true });
-// effect.setSize(window.innerWidth, window.innerHeight);
-// effect.domElement.style.color = 'white';
-// effect.domElement.style.backgroundColor = 'black';
-
-// document.body.appendChild( effect.domElement );
 
 // loading HDR environment map
 new HDRLoader()
