@@ -4,7 +4,7 @@ function limbo() {
         alert("i want to move on.");
     }, 500);
     setTimeout(function() {
-        alert("i don't know where else to go");
+        alert("i don't know where else to go,");
     }, 500);
     setTimeout(function() {
         alert("but i can't grow here.");
