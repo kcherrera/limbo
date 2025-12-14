@@ -35,18 +35,17 @@ new HDRLoader()
         render();
     });
 
-// shape array
+// shapes array
 const shapes = [];
 
 // animation
 const animate = function () {
     renderer.render(scene, camera);
-    // effect.render( scene, camera );
     requestAnimationFrame(animate);
 
     camera.position.setZ(camera.position.z + 1);
 
-    // lets rotate the shapes each frame
+    // rotating each frame
     shapes.forEach(shape => {
         shape.rotateX(0.01);
         //     shape.position.setZ(shape.position.z - 1)
@@ -59,8 +58,6 @@ animate();
 // creating shapes
 const createShape = function (x, y) {
     const geometries = [
-        // new THREE.ConeGeometry(10, 20, 30),
-        // new THREE.BoxGeometry(15, 15, 15),
         // new THREE.TorusGeometry(5, 3, 16, 100),
         new THREE.SphereGeometry(38, 42, 42),
         // new THREE.CircleGeometry( 5, 32 )
@@ -114,7 +111,6 @@ window.addEventListener("resize", function () {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    // effect.setSize( window.innerWidth, window.innerHeight );
 })
 
 function render() {

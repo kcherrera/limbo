@@ -29,15 +29,16 @@ function sketch1(p) {
         graphic.textAlign(p.CENTER, p.CENTER);
         graphic.text("i feel stuck.", graphic.width / 2, graphic.height / 2); //starts here
 
+        // attaching canvas to a specific div
         cnv.parent('canvas1Container');
     };
 
     p.draw = function () {
-        // Update text every textDuration frames
+        // updating text for every frame
         if (p.frameCount % poemDuration === 0 && p.frameCount > 0) {
             currentIndex = (currentIndex + 1) % poem.length;
 
-            // Redraw graphic with new text
+            // redrawing graphic
             graphic.clear();
             graphic.fill(200);
             let responsiveSize = graphic.width / 10;
@@ -46,10 +47,12 @@ function sketch1(p) {
             graphic.text(poem[currentIndex], graphic.width / 2, graphic.height / 2);
         }
 
+        // transparent-ish background
         p.clear();
         p.background(255, 100);
 
         if (graphic) {
+            // wave distortion effect
             const tileSize = 125;
             const cols = Math.ceil(p.width / tileSize);
             const rows = Math.ceil(p.height / tileSize);
@@ -75,7 +78,7 @@ function sketch1(p) {
                 }
             }
         }
-
+        // window resize for p5
         p.windowResized = function () {
             p.resizeCanvas(window.innerWidth, window.innerHeight);
         };
