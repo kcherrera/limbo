@@ -63,6 +63,7 @@ const createShape = function (x, y) {
         // new THREE.CircleGeometry( 5, 32 )
     ]
 
+    // random geometry when you have more than one
     const randNumber = Math.floor(Math.random() * geometries.length);
     const geometry = geometries[randNumber];
 

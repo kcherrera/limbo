@@ -1,18 +1,19 @@
 function sketch1(p) {
     let graphic; // defining on a global scope
 
-    // creating poem array
+    // creating poem array with individual durations
     let currentIndex = 0;
     let poem = [
-        "i feel stuck.",
-        "i want to move.",
-        "i don't know\nwhere else to go,",
-        "but",
-        "i can't stay here.",
-        "i am in limbo...",
-        "are you too?"
+        { text: "i feel stuck.", duration: 95 },
+        { text: "i want to move.", duration: 95 },
+        { text: "i don't know\nwhere else to go,", duration: 95 },
+        { text: "but", duration: 60 },
+        { text: "i can't stay here.", duration: 95 },
+        { text: "i am in limbo...", duration: 120 },
+        { text: "are you too?", duration: 150 },
+        { text: " ", duration: 120 }
     ];
-    let poemDuration = 105;
+    let framesSinceLastChange = 0;
 
     p.setup = async function () {
         let cnv = p.createCanvas(window.innerWidth, window.innerHeight);
@@ -27,15 +28,17 @@ function sketch1(p) {
         let responsiveSize = graphic.width / 10;
         graphic.textSize(responsiveSize);
         graphic.textAlign(p.CENTER, p.CENTER);
-        graphic.text("i feel stuck.", graphic.width / 2, graphic.height / 2); //starts here
+        graphic.text(poem[0].text, graphic.width / 2, graphic.height / 2); //starts here
 
         // attaching canvas to a specific div
         cnv.parent('canvas1Container');
     };
 
     p.draw = function () {
-        // updating text for every frame
-        if (p.frameCount % poemDuration === 0 && p.frameCount > 0) {
+        // updating text based on individual durations
+        framesSinceLastChange++;
+        if (framesSinceLastChange >= poem[currentIndex].duration) {
+            framesSinceLastChange = 0;
             currentIndex = (currentIndex + 1) % poem.length;
 
             // redrawing graphic
@@ -44,7 +47,7 @@ function sketch1(p) {
             let responsiveSize = graphic.width / 10;
             graphic.textSize(responsiveSize);
             graphic.textAlign(p.CENTER, p.CENTER);
-            graphic.text(poem[currentIndex], graphic.width / 2, graphic.height / 2);
+            graphic.text(poem[currentIndex].text, graphic.width / 2, graphic.height / 2);
         }
 
         // transparent-ish background
