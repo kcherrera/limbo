@@ -3,95 +3,26 @@ body {
   /* overflow-y: scroll; */
   font-family: 'Courier New', Courier, monospace;
   font-style: italic;
-
+  overflow-x: hidden;
 }
-
-/* canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-} */
 
 canvas {
   display: block;
 }
 
-
-
 #top-panel {
-  position: absolute;
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    z-index: 1;
+  /* position: absolute;
   top: 50px;
   left: 50px;
   max-width: 400px;
   margin: 20px;
   padding: 1em;
   color: grey;
-  border: 3px dotted grey;
-  z-index: 10;
-}
-
-#middle-panel {
-  position: absolute;
-  top: 150px;
-  left: 150px;
-  max-width: 200px;
-  margin: 20px;
-  padding: 1em;
-  color: grey;
-  border: 3px dotted grey;
-  z-index: 10;
-}
-
-#middle-panel-2 {
-  position: absolute;
-  top: 250px;
-  left: 250px;
-  max-width: 200px;
-  margin: 20px;
-  padding: 1em;
-  color: grey;
-  border: 3px dotted grey;
-  z-index: 10;
-}
-
-#middle-panel-3 {
-  position: absolute;
-  top: 350px;
-  left: 350px;
-  max-width: 200px;
-  margin: 20px;
-  padding: 1em;
-  color: grey;
-  border: 3px dotted grey;
-  z-index: 10;
-}
-
-#middle-panel-4 {
-  position: absolute;
-  top: 450px;
-  left: 450px;
-  max-width: 200px;
-  margin: 20px;
-  padding: 1em;
-  color: grey;
-  border: 3px dotted grey;
-  z-index: 10;
-}
-
-#bottom-panel {
-  position: absolute;
-  top: 550px;
-  left: 550px;
-  max-width: 200px;
-  margin: 20px;
-  padding: 1em;
-  color: grey;
-  border: 3px dotted grey;
-  z-index: 10;
-}
-
-#scroll-spacer {
-  height: 3000px;
-  pointer-events: none;
+  /* border: 3px dotted grey; */
+  /* z-index: 10; */
 }

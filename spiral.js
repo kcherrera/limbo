@@ -10,7 +10,8 @@ const scene = new THREE.Scene();
 
 // camera
 const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.z = -35;
+// camera.position.z = -35;
+camera.position.z = 0;
 camera.lookAt(scene.position);
 
 // renderer
@@ -61,7 +62,7 @@ const createShape = function (x, y) {
         // new THREE.ConeGeometry(10, 20, 30),
         // new THREE.BoxGeometry(15, 15, 15),
         // new THREE.TorusGeometry(5, 3, 16, 100),
-        new THREE.SphereGeometry(35, 42, 42),
+        new THREE.SphereGeometry(38, 42, 42),
         // new THREE.CircleGeometry( 5, 32 )
     ]
 
@@ -79,9 +80,9 @@ const createShape = function (x, y) {
     const shape = new THREE.Mesh(geometry, material);
 
     shape.position.set(
-        (window.innerWidth / 2) - x,
+         x - (window.innerWidth / 2),
         (window.innerHeight / 2) - y,
-        camera.position.z + 500
+        camera.position.z - 305
     )
     shape.rotateX(0.5);
     shape.rotateZ(0.5);
