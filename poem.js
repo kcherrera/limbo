@@ -4,13 +4,13 @@ function sketch1(p) {
     // creating poem array with individual durations
     let currentIndex = 0;
     let poem = [
-        { text: "i feel stuck.", duration: 95 },
-        { text: "i want to move.", duration: 95 },
-        { text: "i don't know\nwhere else to go,", duration: 95 },
-        { text: "but", duration: 60 },
-        { text: "i can't stay here.", duration: 95 },
-        { text: "i am in limbo...", duration: 120 },
-        { text: "are you too?", duration: 150 },
+        { text: "i feel stuck.", duration: 70 },
+        { text: "i want to move.", duration: 70 },
+        { text: "i don't know\nwhere else to go,", duration: 70 },
+        { text: "but", duration: 30 },
+        { text: "i can't stay here.", duration: 75 },
+        { text: "i am in limbo...", duration: 95 },
+        { text: "are you too?", duration: 120 },
         { text: " ", duration: 120 }
     ];
     let framesSinceLastChange = 0;
