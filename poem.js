@@ -11,7 +11,7 @@ function sketch1(p) {
         { text: "i can't stay here.", duration: 75 },
         { text: "i am in limbo...", duration: 95 },
         { text: "are you too?", duration: 120 },
-        { text: " ", duration: 120 }
+        { text: " ", duration: 170 }
     ];
     let framesSinceLastChange = 0;
 
